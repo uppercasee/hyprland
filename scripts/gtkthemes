@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+THEME='catppuccin-macchiato-mauve-standard+default'
+ICONS='Breeze-dark'
+FONT='Noto Sans 10'
+CURSOR='BreezeX-RoséPine'
+CURSOR_SIZE='32'
+
+SCHEMA='gsettings set org.gnome.desktop.interface'
+
+apply_themes () {
+	${SCHEMA} gtk-theme "$THEME"
+	${SCHEMA} icon-theme "$ICONS"
+	${SCHEMA} cursor-theme "$CURSOR"
+	${SCHEMA} font-name "$FONT"
+	${SCHEMA} cursor-size "$CURSOR_SIZE"
+}
+
+apply_themes
